@@ -5,6 +5,10 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "search.html",
-    "default_icon": "Search_Icon1.0.png"
+    "default_icon": {
+      "32": "Search_Icon1.0.png"
+    }
+  "icons": {
+    "32": "Search_Icon1.0.png"
   }
 }
