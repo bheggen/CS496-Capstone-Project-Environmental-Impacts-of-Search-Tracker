@@ -1,0 +1,32 @@
+        Creating a More Transparent and Environmentally Conscious Search Landscape
+  It is known that for each search in Google or through an AI chat bot such as ChatGPT,
+water is consumed and CO2 is produced. While the consumption of water and production of
+CO2 per search is minimal, when taking into account how many searches are made each day, the
+environmental impacts become much more significant. For my project, I will develop a Chrome
+extension that anyone can download onto a Chrome browser that will keep track of the total
+amount of water the user uses, from sources such as the Russian River Watershed, per search on
+Google and ChatGPT, as well as the amount of CO2 produced from their searches.
+  I will develop the application on Manifest V3, the development platform for Chrome, and
+I will primarily use a combination of the TypeScript and React programming languages. I will
+also make use of various Chrome APIs (Application Programming Interfaces) for development
+as well as some APIs for data collection and estimating water consumption and CO2 production.
+Finally, there will be a backend implementation of a database that keeps track of user statistics
+and other information required to estimate their environmental impacts.
+  After development, I plan to distribute my extension to a number of Sonoma State
+students to collect data on how much water they use and how much CO2 they produce through
+their searches. This will allow us to estimate the environmental impact of student searches.
+Furthermore, after the data collection phase I will conduct a survey with the users on how they
+found the extension and if it made them think differently about how they searched. In the final
+analysis, we hope to be able to estimate water usage from the places like the Russian River
+Watershed and CO2 consumption of searches from Sonoma State students and make conclusions
+on whether the extension helps those students make more environmentally conscious decisions in
+their searches.
+  This project could have multiple benefits to society. Firstly, on the user level, people will
+be more informed about the environmental impacts of their daily search activities. With this
+information in mind, users will be better equipped to make changes in their search habits with
+the goal of lessening negative impacts on the environment through searches. Furthermore, the
+data collected from this extension could be used in future studies on the environmental impact of
+Google searches and searches through ChatGPT. Finally, the data could be used in future
+projects, such as raising awareness of the water consumed and the CO2 produced through
+searches or even in measures to advocate for changes to be made by companies like Google or
+OpenAI to reduce the environmental impacts of Google and ChatGPT.
