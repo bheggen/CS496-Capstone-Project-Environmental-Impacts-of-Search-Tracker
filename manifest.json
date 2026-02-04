@@ -6,10 +6,16 @@
   "action": {
     "default_popup": "search.html",
     "default_icon": {
-      "32": "Search_Icon1.0.png"
+      "16": "Search_Icon1.0.png",
+      "32": "Search_Icon1.0.png",
+      "48": "Search_Icon1.0.png",
+      "128": "Search_Icon1.0.png"
     }
   },
   "icons": {
-    "32": "Search_Icon1.0.png"
+    "16": "Search_Icon1.0.png",
+    "32": "Search_Icon1.0.png",
+    "48": "Search_Icon1.0.png",
+    "128": "Search_Icon1.0.png"
   }
 }
