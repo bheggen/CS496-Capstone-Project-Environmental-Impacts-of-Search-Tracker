@@ -1,0 +1,33 @@
+{
+  "name": "cs496-capstone-project-environmental-impacts-of-search-tracker",
+  "version": "1.0.0",
+  "description": "Google Chrome extension that tracks water usage and CO2 produced from every search on Google and through ChatGPT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bheggen/CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bheggen/CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker/issues"
+  },
+  "homepage": "https://github.com/bheggen/CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.1.36",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
