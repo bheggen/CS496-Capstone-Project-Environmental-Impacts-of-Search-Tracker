@@ -1,0 +1,36 @@
+import { initStorage, getUserData, addImpact } from "./storage";
+
+// on install or startup, storage is initialized, generating a userID if one does not exist and default values
+chrome.runtime.onInstalled.addListener(async () => {
+    await initStorage();
+});
+
+chrome.runtime.onStartup.addListener(async () => {
+    await initStorage();
+});
+
+// define valid message types
+type Msg =
+    | { type: "GET_USER_DATA" }
+    | { type: "ADD_IMPACT"; water: number; co2: number };
+
+// on a msg perform an action based on that message
+chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
+    (async () => {
+        if (msg.type === "GET_USER_DATA") { // return user data
+            const data = await getUserData();
+            sendResponse({ ok: true, data });
+            return;
+        }
+
+        if (msg.type === "ADD_IMPACT") { // updates user data given in the message
+            const data = await addImpact(msg.water, msg.co2)
+            sendResponse({ ok: true, data });
+            return;
+        }
+
+        sendResponse({ ok: false, error: "Unknown message type" }); // error handling
+    })();
+
+    return true;
+});
