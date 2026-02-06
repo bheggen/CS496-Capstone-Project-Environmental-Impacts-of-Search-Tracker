@@ -1,0 +1,26 @@
+{
+  "name": "Conscious Search",
+  "description": "Search Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Search_Icon1.0.png",
+      "32": "Search_Icon1.0.png",
+      "48": "Search_Icon1.0.png",
+      "128": "Search_Icon1.0.png"
+    }
+  },
+  "icons": {
+    "16": "Search_Icon1.0.png",
+    "32": "Search_Icon1.0.png",
+    "48": "Search_Icon1.0.png",
+    "128": "Search_Icon1.0.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
