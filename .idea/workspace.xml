@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a75b99-0488-463d-94bd-85ad9740f0e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/background.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/popup/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/popup/main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/storage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
