@@ -52,10 +52,6 @@ export default function App() { // define App
             ) : (
                 <>
                     <div style={{ fontSize: 12, wordBreak: "break-all", opacity: 0.8 }}>
-                        User ID: {data.userId}
-                    </div>
-
-                    <div style={{ marginTop: 10 }}>
                         <div>Water: {data.water.toFixed(3)}</div>
                         <div>CO₂: {data.co2.toFixed(3)}</div>
                     </div>
