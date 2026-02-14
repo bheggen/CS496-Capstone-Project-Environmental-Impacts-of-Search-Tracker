@@ -59,3 +59,14 @@ export async function addImpact(deltaWater: number, deltaCo2: number): Promise<U
     const { userID } = (await STORE.get({ userID: "" })) as { userID: string}; // get userID
     return { userID, ...next }; // return updated state
 }
+
+// function to reset all current values
+export async function resetImpact(): Promise<UserData> {
+    // make sure the userID is maintained
+    const { userID } = (await STORE.get({ userID: "" })) as { userID: string };
+
+    const patch = { water: 0, co2: 0 }; // reset water and co2
+    await STORE.set(patch); // apply patch
+
+    return { userID, ...patch }; // return same userID, just resetting water and co2 values
+}

@@ -7,10 +7,11 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         emptyOutDir: true,
+        copyPublicDir: true,
         rollupOptions: {
             input: {
                 background: "scripts/background.ts",
-                popup: "scripts/popup/main.tsx",
+                popup: "scripts/popup/main.tsx", "content/google": "scripts/content/google.ts"
             },
             output: {
                 entryFileNames: '[name].js'

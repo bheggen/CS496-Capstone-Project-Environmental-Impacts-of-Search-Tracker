@@ -33,6 +33,21 @@ export default function App() { // define App
         setData(res.data);
     }
 
+    // reset data function
+    async function reset() {
+        const ok = window.confirm("Are you sure you want to reset water and CO₂ totals to zero?"); // check for user confirmation
+        if (!ok) return; // exit on user declining to reset
+
+        setError(null);
+        const res = (await chrome.runtime.sendMessage({ type: "RESET_IMPACT" })) as GetRes;
+
+        if (!res.ok) {
+            setError(res.error);
+            return;
+        }
+        setData(res.data);
+    }
+
     useEffect(() => { // run load once
         load();
     }, []);
@@ -55,12 +70,12 @@ export default function App() { // define App
                         <div>Water: {data.water.toFixed(3)}</div>
                         <div>CO₂: {data.co2.toFixed(3)}</div>
                     </div>
-
-                    <button style={{ marginTop: 12 }} onClick={testAdd}>
-                        Test add impact
-                    </button>
                 </>
+
             )}
+            <button style={{ marginTop: 8 }} onClick={reset}>
+                Reset totals
+            </button>
         </div>
     );
 }
