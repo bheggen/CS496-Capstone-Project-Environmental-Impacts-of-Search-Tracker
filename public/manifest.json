@@ -22,5 +22,12 @@
   "background": {
     "service_worker": "background.js",
     "type": "module"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/search*", "*://*.google.com/*"],
+      "js": ["content/google.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-import { initStorage, getUserData, addImpact } from "./storage";
+import { initStorage, getUserData, addImpact, resetImpact } from "./storage";
 
 // on install or startup, storage is initialized, generating a userID if one does not exist and default values
 chrome.runtime.onInstalled.addListener(async () => {
@@ -12,7 +12,8 @@ chrome.runtime.onStartup.addListener(async () => {
 // define valid message types
 type Msg =
     | { type: "GET_USER_DATA" }
-    | { type: "ADD_IMPACT"; water: number; co2: number };
+    | { type: "ADD_IMPACT"; water: number; co2: number }
+    | { type: "RESET_IMPACT" };
 
 // on a msg perform an action based on that message
 chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
@@ -25,6 +26,12 @@ chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
 
         if (msg.type === "ADD_IMPACT") { // updates user data given in the message
             const data = await addImpact(msg.water, msg.co2)
+            sendResponse({ ok: true, data });
+            return;
+        }
+
+        if (msg.type === "RESET_IMPACT") { // reset user date on message
+            const data = await resetImpact();
             sendResponse({ ok: true, data });
             return;
         }
