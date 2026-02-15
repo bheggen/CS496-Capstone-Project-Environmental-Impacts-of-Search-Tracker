@@ -11,11 +11,11 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 background: "scripts/background.ts",
-                popup: "scripts/popup/main.tsx", "content/google": "scripts/content/google.ts"
+                popup: "scripts/popup/main.tsx",
+                "content/google": "scripts/content/google.ts",
+                "content/chatgpt": "scripts/content/chatgpt.ts"
             },
-            output: {
-                entryFileNames: '[name].js'
-            }
+            output: { entryFileNames: "[name].js" }
         }
     }
 });

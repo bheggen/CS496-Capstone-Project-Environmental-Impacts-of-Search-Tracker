@@ -1,6 +1,3 @@
-// get constants
-import { IMPACTS } from "../constants"
-
 let lastQuery: string | null = null; // for tracking the last query
 
 // get the search query to see if it is a google search
@@ -16,11 +13,7 @@ function onPossibleNavigation() {
     if (!q) return; // if it is empty, return
     if (q == lastQuery) return; // if it is a copy of the last query, return
     lastQuery = q; // make q the new lastQuery
-    chrome.runtime.sendMessage({ // q is valid so we add the values
-        type: "ADD_IMPACT",
-        water: IMPACTS.google.watermL,
-        co2: IMPACTS.google.co2g
-    })
+    chrome.runtime.sendMessage({ type: "SEARCH_DETECTED", provider: "google" }); // tell background to increment
 }
 
 onPossibleNavigation(); // run on load
