@@ -25,17 +25,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.google.com/*"],
-      "js": ["content/google.js"],
-      "run_at": "document_idle"
-    },
-    {
-      "matches": [
-        "*://chat.openai.com/*",
-        "*://chatgpt.com/*"
-      ],
-      "js": ["content/chatgpt.js"],
+      "matches": ["*://*.google.com/*", "*://chatgpt.com/*", "*://chat.openai.com/*"],
+      "js": ["content/main.js"],
       "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["ui/*.png"],
+      "matches": ["*://*.google.com/*", "*://chatgpt.com/*", "*://chat.openai.com/*"]
     }
   ]
 }

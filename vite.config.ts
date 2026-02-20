@@ -12,8 +12,7 @@ export default defineConfig({
             input: {
                 background: "scripts/background.ts",
                 popup: "scripts/popup/main.tsx",
-                "content/google": "scripts/content/google.ts",
-                "content/chatgpt": "scripts/content/chatgpt.ts"
+                "content/main": "scripts/content/main.ts"
             },
             output: { entryFileNames: "[name].js" }
         }

@@ -14,6 +14,10 @@ const DEFAULTS: UserData = { // default values
     co2: 0
 };
 
+// settings with defaults
+export type Settings = { units: "metric" | "us" };
+export const DEFAULT_SETTINGS: Settings = { units: "metric" };
+
 // runs on startup, generating a userID if one does not already exist and
 export async function initStorage(): Promise<UserData> {
     const data = (await STORE.get(DEFAULTS)) as UserData; // reads from chrome.storage or DEFAULTS If there is no data
@@ -69,4 +73,16 @@ export async function resetImpact(): Promise<UserData> {
     await STORE.set(patch); // apply patch
 
     return { userID, ...patch }; // return same userID, just resetting water and co2 values
+}
+
+// get current settings
+export async function getSettings(): Promise<Settings> {
+    const { units } = (await STORE.get({ units: DEFAULT_SETTINGS.units })) as { units: Settings["units"] };
+    return { units };
+}
+
+// set settings
+export async function setSettings(next: Settings): Promise<Settings> {
+    await STORE.set(next);
+    return next;
 }
