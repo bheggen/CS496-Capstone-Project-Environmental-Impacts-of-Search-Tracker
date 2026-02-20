@@ -1,4 +1,4 @@
-import { initStorage, getUserData, addImpact, resetImpact } from "./storage";
+import { initStorage, getUserData, addImpact, resetImpact, getSettings, setSettings } from "./storage";
 import { IMPACTS } from "./constants";
 
 // on install or startup, storage is initialized, generating a userID if one does not exist and default values
@@ -15,7 +15,9 @@ type Msg =
     | { type: "GET_USER_DATA" }
     | { type: "ADD_IMPACT"; water: number; co2: number }
     | { type: "RESET_IMPACT" }
-    | { type: "SEARCH_DETECTED"; provider: "google" | "chatgpt" };
+    | { type: "SEARCH_DETECTED"; provider: "google" | "chatgpt" }
+    | { type: "GET_SETTINGS" }
+    | { type: "SET_SETTINGS"; settings: { units: "metric" | "us" } };
 
 // on a msg perform an action based on that message
 chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
@@ -40,8 +42,27 @@ chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
 
         if (msg.type === "SEARCH_DETECTED") { // increment on a search being detected
             const imp = IMPACTS[msg.provider]; // check message provider
-            const data = await addImpact(imp.watermL, imp.co2g); // get constants
-            sendResponse({ ok: true, data });
+            const data = await addImpact(imp.water, imp.co2); // get constants
+            const settings = await getSettings();
+
+            sendResponse({
+                ok: true,
+                data,
+                delta: { water: imp.water, co2: imp.co2 }, // send the changes to be displayed
+                settings
+            });
+            return;
+        }
+
+        if (msg.type === "GET_SETTINGS") {
+            const settings = await getSettings();
+            sendResponse({ ok: true, settings });
+            return;
+        }
+
+        if (msg.type === "SET_SETTINGS") {
+            const settings = await setSettings(msg.settings);
+            sendResponse({ ok: true, settings });
             return;
         }
 
