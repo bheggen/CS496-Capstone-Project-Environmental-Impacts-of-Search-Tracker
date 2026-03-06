@@ -1,4 +1,4 @@
-import { initStorage, getUserData, addImpact, resetImpact, getSettings, setSettings } from "./storage";
+import { initStorage, getUserData, addImpact, resetImpact, getSettings, setSettings, getStats } from "./storage";
 import { IMPACTS } from "./constants";
 
 // on install or startup, storage is initialized, generating a userID if one does not exist and default values
@@ -17,7 +17,8 @@ type Msg =
     | { type: "RESET_IMPACT" }
     | { type: "SEARCH_DETECTED"; provider: "google" | "chatgpt" }
     | { type: "GET_SETTINGS" }
-    | { type: "SET_SETTINGS"; settings: { units: "metric" | "us" } };
+    | { type: "SET_SETTINGS"; settings: { units: "metric" | "us" } }
+    | { type: "GET_STATS" };
 
 // on a msg perform an action based on that message
 chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
@@ -63,6 +64,12 @@ chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
         if (msg.type === "SET_SETTINGS") {
             const settings = await setSettings(msg.settings);
             sendResponse({ ok: true, settings });
+            return;
+        }
+
+        if (msg.type === "GET_STATS") {
+            const stats = await getStats();
+            sendResponse({ ok: true, stats });
             return;
         }
 

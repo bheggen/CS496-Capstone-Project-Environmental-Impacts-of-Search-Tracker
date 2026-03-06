@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a75b99-0488-463d-94bd-85ad9740f0e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/ui/CO2Icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ui/WaterIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/content/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/content/chatgpt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/content/google.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/background.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/background.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/content/chatgpt.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/content/google.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/popup/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/popup/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/storage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/storage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +76,7 @@
       <updated>1769808715445</updated>
       <workItem from="1769808716968" duration="7500000" />
       <workItem from="1770167820917" duration="153000" />
-      <workItem from="1771177856315" duration="12401000" />
+      <workItem from="1771177856315" duration="27748000" />
     </task>
     <servers />
   </component>
