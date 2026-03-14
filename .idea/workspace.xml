@@ -9,6 +9,8 @@
       <change beforePath="$PROJECT_DIR$/dist/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/background.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/background.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/content/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/content/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/popup/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/popup/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/storage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/storage.ts" afterDir="false" />
     </list>
@@ -36,21 +38,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "benBranch",
-    "last_opened_file_path": "C:/Users/benar/WebstormProjects/CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker/public/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\benar\\WebstormProjects\\CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;benBranch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/benar/WebstormProjects/CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker/public/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\benar\\WebstormProjects\\CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\benar\WebstormProjects\CS496-Capstone-Project-Environmental-Impacts-of-Search-Tracker\public\ui" />
@@ -76,7 +78,9 @@
       <updated>1769808715445</updated>
       <workItem from="1769808716968" duration="7500000" />
       <workItem from="1770167820917" duration="153000" />
-      <workItem from="1771177856315" duration="27748000" />
+      <workItem from="1771177856315" duration="31751000" />
+      <workItem from="1773077999739" duration="1853000" />
+      <workItem from="1773510846412" duration="2313000" />
     </task>
     <servers />
   </component>

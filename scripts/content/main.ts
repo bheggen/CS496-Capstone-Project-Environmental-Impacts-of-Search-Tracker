@@ -136,11 +136,18 @@ function showImpactPills(delta: ImpactDelta, settings: Settings) {
 
 // On detecting a search send a message to background and display info
 function onSearchDetected(provider: "google" | "chatgpt") {
-    chrome.runtime.sendMessage({ type: "SEARCH_DETECTED", provider }, (res) => {
-        if (res?.ok && res?.delta && res?.settings) {
-            showImpactPills(res.delta, res.settings);
-        }
-    });
+    try {
+        if (!chrome?.runtime?.id) return;
+
+        chrome.runtime.sendMessage({ type: "SEARCH_DETECTED", provider }, (res) => {
+            if (chrome.runtime.lastError) return;
+            if (res?.ok && res?.delta && res?.settings) {
+                showImpactPills(res.delta, res.settings);
+            }
+        });
+    } catch {
+        // Ignore invalidated extension context during dev reloads
+    }
 }
 
 function initGoogle() {
@@ -176,7 +183,6 @@ function initGoogle() {
 }
 
 function initChatGPT() {
-    console.log("[CS] chatgpt content script loaded"); // debug message
 
     // ensures we only account for one query
     let lastSendAt = 0; // store timestamp for last send
@@ -194,7 +200,6 @@ function initChatGPT() {
     document.addEventListener(
         "keydown",
         (e) => {
-            console.log("[CS] keydown", e.key, "shift?", e.shiftKey, "target=", (e.target as any)?.tagName); // debug message
             if (e.key !== "Enter") return; // look only for enter
             if (e.shiftKey) return; // ignore shift+enter
             if (e.isComposing) return; // ignore enter presses used to make other character
