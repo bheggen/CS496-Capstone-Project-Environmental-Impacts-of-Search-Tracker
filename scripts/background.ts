@@ -1,4 +1,4 @@
-import { initStorage, getUserData, addImpact, resetImpact, getSettings, setSettings, getStats } from "./storage";
+import { initStorage, getUserData, addImpact, resetImpact, getSettings, setSettings, getStats, getGoal, setGoal, clearGoal } from "./storage";
 import { IMPACTS } from "./constants";
 
 // on install or startup, storage is initialized, generating a userID if one does not exist and default values
@@ -18,7 +18,10 @@ type Msg =
     | { type: "SEARCH_DETECTED"; provider: "google" | "chatgpt" }
     | { type: "GET_SETTINGS" }
     | { type: "SET_SETTINGS"; settings: { units: "metric" | "us" } }
-    | { type: "GET_STATS" };
+    | { type: "GET_STATS" }
+    | { type: "GET_GOAL" }
+    | { type: "SET_GOAL"; goal: { startDate: string; targetDate: string; targetWater: number; targetCo2: number; active: boolean } }
+    | { type: "CLEAR_GOAL" };
 
 // on a msg perform an action based on that message
 chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
@@ -70,6 +73,24 @@ chrome.runtime.onMessage.addListener((msg: Msg, _sender, sendResponse) => {
         if (msg.type === "GET_STATS") {
             const stats = await getStats();
             sendResponse({ ok: true, stats });
+            return;
+        }
+
+        if (msg.type === "GET_GOAL") {
+            const goal = await getGoal();
+            sendResponse({ ok: true, goal });
+            return;
+        }
+
+        if (msg.type === "SET_GOAL") {
+            const goal = await setGoal(msg.goal);
+            sendResponse({ ok: true, goal });
+            return;
+        }
+
+        if (msg.type === "CLEAR_GOAL") {
+            const goal = await clearGoal();
+            sendResponse({ ok: true, goal });
             return;
         }
 

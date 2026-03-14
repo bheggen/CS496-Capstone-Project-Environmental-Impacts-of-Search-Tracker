@@ -27,6 +27,26 @@ const DEFAULTS: UserData = { // default values
 
 const DEFAULT_STATS: Stats = { daily: {}, weekly: {} };
 
+export type Goal = {
+    // ISO date strings (YYYY-MM-DD)
+    startDate: string;   // when goal was created
+    targetDate: string;  // user-chosen date
+
+    // targets stored in base units (mL + g)
+    targetWater: number; // mL
+    targetCo2: number;   // g
+
+    active: boolean;
+};
+
+const DEFAULT_GOAL: Goal = {
+    startDate: "",
+    targetDate: "",
+    targetWater: 0,
+    targetCo2: 0,
+    active: false
+};
+
 // settings with defaults
 export type Settings = { units: "metric" | "us" };
 export const DEFAULT_SETTINGS: Settings = { units: "metric" };
@@ -43,6 +63,11 @@ export async function initStorage(): Promise<UserData> {
 
     if (!stats || typeof stats !== "object") {
         await STORE.set({ stats: DEFAULT_STATS });
+    }
+
+    const { goal } = (await STORE.get({ goal: DEFAULT_GOAL })) as { goal: Goal };
+    if (!goal || typeof goal !== "object") {
+        await STORE.set({ goal: DEFAULT_GOAL });
     }
 
     if (Object.keys(patch).length) { // check if any fields need to be updated
@@ -122,6 +147,21 @@ export async function resetImpact(): Promise<UserData> {
 export async function getStats(): Promise<Stats> {
     const { stats } = (await STORE.get({ stats: DEFAULT_STATS })) as { stats: Stats };
     return stats ?? DEFAULT_STATS;
+}
+
+export async function getGoal(): Promise<Goal> {
+    const { goal } = (await STORE.get({ goal: DEFAULT_GOAL })) as { goal: Goal };
+    return goal ?? DEFAULT_GOAL;
+}
+
+export async function setGoal(next: Goal): Promise<Goal> {
+    await STORE.set({ goal: next });
+    return next;
+}
+
+export async function clearGoal(): Promise<Goal> {
+    await STORE.set({ goal: DEFAULT_GOAL });
+    return DEFAULT_GOAL;
 }
 
 // get current settings
