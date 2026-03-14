@@ -16,3 +16,5 @@ This information is stored locally using Chrome's storage.local API and is never
 Conscious Search does not collect search queries, browsing history, personal communications, or personally identifiable information.
 
 The extension does not sell, share, or transfer user data to third parties.
+
+Last Updated: March 2026
