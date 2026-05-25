@@ -32,3 +32,5 @@ For local development:
 ```bash
 npm install
 npm run build
+
+Then load the dist folder as an unpacked extension in Chrome.
