@@ -23,6 +23,27 @@ Environmental impact values are estimates based on publicly available research a
 
 TypeScript, React, Chrome Extensions API, Vite
 
+## Architecture
+
+The extension uses:
+- React for the UI
+- Chrome Extensions API for browser integration
+- Local browser storage for persistence
+- TypeScript for type-safe frontend logic
+
+All calculations and tracking are performed locally in the browser.
+
+## Screenshots
+
+### Popup Interface
+![Popup Screenshot](screenshots/popup.png)
+
+### Statistics Dashboard
+![Dashboard Screenshot](screenshots/statistics.png)
+
+### Goal Dashboard
+![Goal Screenshot](screenshots/goal.png)
+
 ## Installation
 
 Install from the Chrome Web Store: [Conscious Search](https://chromewebstore.google.com/detail/conscious-search/khflbchppnjjhckmimibnjdcikbecloh?authuser=0&hl=en)
